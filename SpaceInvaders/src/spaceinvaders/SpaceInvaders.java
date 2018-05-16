@@ -26,18 +26,18 @@ public class SpaceInvaders {
         int posTiro = 76;
 
         //Crio os monstros na tela
-        meusmonstros[0] = new Inimigo(2, 5, 2);
-        meusmonstros[1] = new Inimigo(15, 5, 2);
-        meusmonstros[2] = new Inimigo(28, 5, 2);
-        meusmonstros[3] = new Inimigo(41, 5, 2);
-        meusmonstros[4] = new Inimigo(54, 5, 2);
-        meusmonstros[5] = new Inimigo(67, 5, 2);
-        meusmonstros[6] = new Inimigo(2, 15, 2);
-        meusmonstros[7] = new Inimigo(15, 15, 2);
-        meusmonstros[8] = new Inimigo(28, 15, 2);
-        meusmonstros[9] = new Inimigo(41, 15, 2);
-        meusmonstros[10] = new Inimigo(54, 15, 2);
-        meusmonstros[11] = new Inimigo(67, 15, 2);
+        meusmonstros[0] = new Inimigo(2, 5, 1);
+        meusmonstros[1] = new Inimigo(15, 5, 1);
+        meusmonstros[2] = new Inimigo(28, 5, 1);
+        meusmonstros[3] = new Inimigo(41, 5, 1);
+        meusmonstros[4] = new Inimigo(54, 5, 1);
+        meusmonstros[5] = new Inimigo(67, 5, 1);
+        meusmonstros[6] = new Inimigo(2, 15, 1);
+        meusmonstros[7] = new Inimigo(15, 15, 1);
+        meusmonstros[8] = new Inimigo(28, 15, 1);
+        meusmonstros[9] = new Inimigo(41, 15, 1);
+        meusmonstros[10] = new Inimigo(54, 15, 1);
+        meusmonstros[11] = new Inimigo(67, 15, 1);
         //Inicia o jogo
         Space.init();
 
@@ -47,16 +47,34 @@ public class SpaceInvaders {
                 meusmonstros[j].setY(meusmonstros[j].getY() + 1);
                  if(meusmonstros[j].getY()==67){
                     Space.gameOver();
+
                   
                 }
             }
         
 
             //Verifica tiros
-            
                 for (int t = 0; t < quantidadeTiros; t++) {
                     meustiros[t].y = meustiros[t].y-1;
                 }
+                
+                
+                    for (int j = 0; j < 12; j++) {
+                        for (int t = 0; t < quantidadeTiros; t++) {
+                         if((meustiros[t].y >= meusmonstros[j].getY() && meustiros[t].y <= meusmonstros[j].getY()+8 ) && (meustiros[t].x >= meusmonstros[j].getX()-1 && meustiros[t].x <= meusmonstros[j].getX()+11)){
+                             meusmonstros[j].vida--;
+                            }
+                            if(meusmonstros[j].vida == 0){
+                                meusmonstros[j].y = -150;
+                                meusmonstros[j].x = -150;
+                                quantidadeMonst--;
+                            }
+
+                        }  
+                    }
+                  
+
+
             
 
                 System.out.println(Space.getPlatX());
