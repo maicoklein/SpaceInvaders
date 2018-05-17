@@ -61,7 +61,9 @@ public class SpaceInvaders {
                 
                     for (int j = 0; j < 12; j++) {
                         for (int t = 0; t < quantidadeTiros; t++) {
-                         if((meustiros[t].y >= meusmonstros[j].getY() && meustiros[t].y <= meusmonstros[j].getY()+8 ) && (meustiros[t].x >= meusmonstros[j].getX()-1 && meustiros[t].x <= meusmonstros[j].getX()+11)){
+                         //if((meustiros[t].y >= meusmonstros[j].getY() && meustiros[t].y <= meusmonstros[j].getY()+8 ) && (meustiros[t].x >= meusmonstros[j].getX()-1 && meustiros[t].x <= meusmonstros[j].getX()+11)){
+                         if((meustiros[t].y == meusmonstros[j].getY()) && (meustiros[t].x >= meusmonstros[j].getX()-1 && meustiros[t].x <= meusmonstros[j].getX()+11)){    
+                             System.out.println(meustiros[t].x+" "+meusmonstros[j].x);
                              meusmonstros[j].vida--;
                             }
                             if(meusmonstros[j].vida == 0){

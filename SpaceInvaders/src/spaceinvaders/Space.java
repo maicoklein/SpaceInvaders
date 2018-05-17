@@ -94,7 +94,7 @@ int [ ] [ ] game = {
 	
     frame.repaint();
     try{
-      Thread.sleep(80); //Aqui regula a velocidade do jogo, quanto maior, mais lento
+      Thread.sleep(150); //Aqui regula a velocidade do jogo, quanto maior, mais lento
     }catch(java.lang.InterruptedException e){
     }
   }
