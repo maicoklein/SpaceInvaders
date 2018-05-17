@@ -41,11 +41,13 @@ public class SpaceInvaders {
         //Inicia o jogo
         Space.init();
 
-        for (int i = 0; i < 150; i++) {
+        for (int i = 0; i < 110; i++) {
             //Move os bonecos
             for (int j = 0; j < 12; j++) {
-                meusmonstros[j].setY(meusmonstros[j].getY() + 1);
-                 if(meusmonstros[j].getY()==67){
+                if(i%2==0){
+                    meusmonstros[j].setY(meusmonstros[j].getY() + 1);                   
+                }
+                 if(meusmonstros[j].getY()==70){
                     Space.gameOver();
 
                   
@@ -59,21 +61,29 @@ public class SpaceInvaders {
                 }
                 
                 
-                    for (int j = 0; j < 12; j++) {
+                    for (int j = 0; j < quantidadeMonst; j++) {
                         for (int t = 0; t < quantidadeTiros; t++) {
-                         //if((meustiros[t].y >= meusmonstros[j].getY() && meustiros[t].y <= meusmonstros[j].getY()+8 ) && (meustiros[t].x >= meusmonstros[j].getX()-1 && meustiros[t].x <= meusmonstros[j].getX()+11)){
-                         if((meustiros[t].y == meusmonstros[j].getY()) && (meustiros[t].x >= meusmonstros[j].getX()-1 && meustiros[t].x <= meusmonstros[j].getX()+11)){    
-                             System.out.println(meustiros[t].x+" "+meusmonstros[j].x);
+                         if((meustiros[t].y >= meusmonstros[j].getY() && meustiros[t].y <= meusmonstros[j].getY()+5) && (meustiros[t].x >= meusmonstros[j].getX()-1 && meustiros[t].x <= meusmonstros[j].getX()+11)){
+
+                             System.out.println(quantidadeMonst);
                              meusmonstros[j].vida--;
+                             meustiros[t].y = -100;
+                             
                             }
                             if(meusmonstros[j].vida == 0){
                                 meusmonstros[j].y = -150;
                                 meusmonstros[j].x = -150;
-                                quantidadeMonst--;
-                            }
+                                for(int v1 = j; v1 < quantidadeMonst-1; v1++){
+                                    Inimigo aux = meusmonstros[v1];
+                                    meusmonstros[v1] = meusmonstros[v1 + 1];
+                                    meusmonstros[v1+1] = aux;
+
+                                }
+                            }                            
 
                         }  
                     }
+
                   
 
 
