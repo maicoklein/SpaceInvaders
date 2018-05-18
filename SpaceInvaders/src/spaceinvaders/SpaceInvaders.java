@@ -107,7 +107,7 @@ public class SpaceInvaders {
                     quantidadeTiros++;
                 }
                 
-                if(quantidadeMonst == 0){
+                if(quantidadeMonst <= 0){
                     i = 150;
                     Space.ganhou();
                 }
