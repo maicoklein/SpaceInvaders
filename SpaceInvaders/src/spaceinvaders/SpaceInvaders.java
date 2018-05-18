@@ -79,6 +79,7 @@ public class SpaceInvaders {
                                     meusmonstros[v1+1] = aux;
 
                                 }
+                                quantidadeMonst--;
                             }                            
 
                         }  
