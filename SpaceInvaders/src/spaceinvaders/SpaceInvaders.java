@@ -64,8 +64,7 @@ public class SpaceInvaders {
                     for (int j = 0; j < quantidadeMonst; j++) {
                         for (int t = 0; t < quantidadeTiros; t++) {
                          if((meustiros[t].y >= meusmonstros[j].getY() && meustiros[t].y <= meusmonstros[j].getY()+5) && (meustiros[t].x >= meusmonstros[j].getX()-1 && meustiros[t].x <= meusmonstros[j].getX()+11)){
-
-                             System.out.println(quantidadeMonst);
+                             //System.out.println(quantidadeMonst);
                              meusmonstros[j].vida--;
                              meustiros[t].y = -100;
                              
@@ -80,7 +79,8 @@ public class SpaceInvaders {
 
                                 }
                                 quantidadeMonst--;
-                            }                            
+                            }   
+                            
 
                         }  
                     }
@@ -107,7 +107,7 @@ public class SpaceInvaders {
                     quantidadeTiros++;
                 }
                 
-                if(quantidadeMonst <= 0){
+                if(quantidadeMonst < 0){
                     i = 150;
                     Space.ganhou();
                 }
