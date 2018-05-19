@@ -43,14 +43,13 @@ public class SpaceInvaders {
 
         for (int i = 0; i < 110; i++) {
             //Move os bonecos
-            for (int j = 0; j < 12; j++) {
+            for (int j = 0; j < quantidadeMonst; j++) {
                 if(i%2==0){
                     meusmonstros[j].setY(meusmonstros[j].getY() + 1);                   
                 }
                  if(meusmonstros[j].getY()==70){
                     Space.gameOver();
-
-                  
+                    break;                
                 }
             }
         
@@ -58,20 +57,20 @@ public class SpaceInvaders {
             //Verifica tiros
                 for (int t = 0; t < quantidadeTiros; t++) {
                     meustiros[t].y = meustiros[t].y-1;
-                }
-                
+                }           
                 
                     for (int j = 0; j < quantidadeMonst; j++) {
                         for (int t = 0; t < quantidadeTiros; t++) {
                          if((meustiros[t].y >= meusmonstros[j].getY() && meustiros[t].y <= meusmonstros[j].getY()+5) && (meustiros[t].x >= meusmonstros[j].getX()-1 && meustiros[t].x <= meusmonstros[j].getX()+11)){
-                             //System.out.println(quantidadeMonst);
+                             System.out.println(quantidadeMonst);
                              meusmonstros[j].vida--;
                              meustiros[t].y = -100;
-                             
+                              
                             }
                             if(meusmonstros[j].vida == 0){
                                 meusmonstros[j].y = -150;
                                 meusmonstros[j].x = -150;
+                                
                                 for(int v1 = j; v1 < quantidadeMonst-1; v1++){
                                     Inimigo aux = meusmonstros[v1];
                                     meusmonstros[v1] = meusmonstros[v1 + 1];
@@ -80,8 +79,6 @@ public class SpaceInvaders {
                                 }
                                 quantidadeMonst--;
                             }   
-                            
-
                         }  
                     }
 

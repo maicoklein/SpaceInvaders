@@ -1,6 +1,5 @@
 package spaceinvaders;
-//teste paulo
-//teste luan
+
 
 public class Inimigo {
 

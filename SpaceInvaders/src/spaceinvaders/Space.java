@@ -8,7 +8,6 @@ import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 import java.awt.Dimension;
 //ttt
-//ttt
 public class Space extends JPanel{
 		
 		
@@ -125,7 +124,7 @@ int [ ] [ ] game = {
   
   public void paintComponent(Graphics g) {
 
-	int width = getWidth();
+    int width = getWidth();
     int height = getHeight();
     g.setColor(Color.black);
 
